@@ -17,6 +17,7 @@ public class Customer {
         return _name;
     }
 
+    // Método para gerar o relatório padrão
     public String statement() {
         Enumeration<Rental> rentals = _rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
@@ -31,6 +32,7 @@ public class Customer {
         return result;
     }
 
+    // Método para gerar o relatório em HTML
     public String htmlStatement() {
         Enumeration<Rental> rentals = _rentals.elements();
         String result = "<H1>Rentals for <EM>" + getName() + "</EM></H1><P>\n";
@@ -46,6 +48,7 @@ public class Customer {
         return result;
     }
 
+    // Método para calcular o total de valores
     private double getTotalCharge() {
         double result = 0;
         Enumeration<Rental> rentals = _rentals.elements();
@@ -56,6 +59,7 @@ public class Customer {
         return result;
     }
 
+    // Método para calcular os pontos totais do cliente
     private int getTotalFrequentRenterPoints() {
         int result = 0;
         Enumeration<Rental> rentals = _rentals.elements();
